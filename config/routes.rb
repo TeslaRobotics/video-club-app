@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
+  root 'welcome#index'
+  get 'welcome', to: 'welcome#index'
   resources :orders
   resources :castings
   resources :cassettes
