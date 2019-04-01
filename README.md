@@ -1,24 +1,20 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Start server with :
+rails s
 
-Things you may want to cover:
+#Commands used
 
-* Ruby version
+# no relation
 
-* System dependencies
+rails g scaffold Member name:string phone:string address:string
+rails g scaffold Format name:string
+rails g scaffold Category name:string
+rails g scaffold Actor name:string
 
-* Configuration
+# with relation
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+rails g scaffold Movie title:string category:references
+rails g scaffold Cassette name:text movie:references format:references
+rails g scaffold Casting actor:references movie:references
+rails g scaffold Order start_date:date end_date:date cassette:references member:references
